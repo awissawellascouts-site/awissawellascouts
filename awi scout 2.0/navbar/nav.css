@@ -1,0 +1,671 @@
+/* =================== CSS Variables =================== */
+:root {
+    --hover-gold: #f1c40f;
+    --bg-color: #011633;
+    --accent-blue: #00d2ff;
+}
+
+/* මූලික සැකසුම් */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Utility Bar ප්‍රධාන සැකසුම */
+.utility-bar {
+    background-color: #011633;
+    color: #ffffff;
+    padding: 5px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* වම් පස තොරතුරු (ලිපිනය, දුරකථන, විද්‍යුත් තැපෑල) */
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    color: #5f34b4;
+    transform: translateY(-2px);
+}
+
+.info-item i {
+    color: #00d2ff;
+}
+
+/* දකුණු පස තොරතුරු (සමාජ මාධ්‍ය සහ දිනය) */
+.right-side {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+
+
+.social-links-1 {
+    display: flex;
+
+    gap: 15px;
+}
+
+.social-links-1 a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links-1 a:hover {
+    background: var(--hover-gold);
+    color: var(--bg-color);
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 0 20px var(--hover-gold);
+}
+
+
+
+
+
+/* Responsive සැකසුම (ජංගම දුරකථන සඳහා) */
+@media (max-width: 480px) {
+    .utility-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 5px 2%;
+    }
+
+    .contact-info {
+        font-size: 7px;
+        flex-direction: row;
+        gap: 6px;
+    }
+
+
+    /* Social Media Icons Advanced Animation */
+    .social-links-1 {
+        display: flex;
+
+        gap: 15px;
+    }
+
+    .social-links-1 a {
+        width: 15px;
+        height: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-size: 7px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-links-1 a:hover {
+        background: var(--hover-gold);
+        color: var(--bg-color);
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 0 20px var(--hover-gold);
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/* Navbar Component Wrapper Fix */
+#navbar-placeholder {
+    display: contents;
+}
+
+/* Header Main Section */
+.header-top {
+    background-color: #03234d;
+    height: 155px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header-top.scrolled {
+    height: 90px;
+}
+
+/* Utility Login Button */
+.utility-login-btn {
+    background-color: #000080;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.utility-login-btn:hover {
+    background-color: #0000cc;
+    transform: scale(1.05);
+    color: white;
+}
+
+.header-top.scrolled .brand-logo {
+    opacity: 0.5;
+    visibility: hidden;
+    height: 0;
+}
+
+.header-top.scrolled .main-title {
+    font-size: 34px;
+}
+
+.header-top.scrolled .sub-title {
+    font-size: 10px;
+}
+
+.header-top.scrolled .nav-extra-logos img {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+/* Keep mini-logo visible & centered while scrolling (desktop shrunk state) */
+.nav-container.shrunk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container.shrunk .mini-logo {
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin: 0;
+}
+
+/* Utility bar hide on scroll (desktop) */
+.utility-bar {
+    transition: margin-top 0.35s ease, opacity 0.35s ease;
+}
+
+.utility-bar.scrolled-hide {
+    margin-top: -60px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.5s;
+}
+
+.brand-logo {
+    height: 100px;
+    transition: 0.5s;
+}
+
+.brand-text {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    line-height: 0.9;
+}
+
+.sub-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #e2e8f0;
+}
+
+/* Navigation Bar Container */
+.nav-container {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #011633;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 12px 40px;
+    z-index: 3000;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 600px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    transition: 0.3s;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Hamburger is only for mobile/tablet */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Scroll වූ පසු සිදුවන වෙනස්කම් (Shrink Animation) */
+.nav-container.shrunk {
+    bottom: -35px;
+    /* මදක් පහළට */
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border-color: #03234d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container.shrunk .nav-links {
+    display: none;
+    /* සියලුම ලින්ක්ස් සඟවයි */
+}
+
+/* Scroll වූ පසු පෙන්වන කුඩා Logo එක */
+.mini-logo {
+    display: none;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    animation: rotateIn 0.5s ease;
+}
+
+.nav-container.shrunk .mini-logo {
+    display: block;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-180deg) scale(0);
+    }
+
+    to {
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Mega Menu සැකසුම් */
+.mega-box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 950px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    padding: 40px;
+    cursor: default;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-links>li:hover .mega-box {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 20px;
+}
+
+.mega-col {
+    flex: 1;
+}
+
+.mega-col h3 {
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mega-col h3 i {
+    font-size: 12px;
+}
+
+.mega-col h3.sub-heading {
+    margin-top: 25px;
+}
+
+.mega-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-col ul li {
+    margin-bottom: 12px;
+}
+
+.mega-col ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.mega-col ul li a:hover {
+    color: #27597d;
+    text-decoration: underline;
+}
+
+/* Promotional Card */
+.mega-promo {
+    flex: 1.5;
+    text-align: center;
+    background-color: #fcfdfd;
+    padding-left: 20px;
+    border-left: 1px solid #f0f0f0;
+}
+
+.mega-promo .promo-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #2e7d32;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.mega-promo h2 {
+    font-size: 22px;
+    color: #000;
+    margin: 0 0 15px 0;
+}
+
+.mega-promo p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.mega-promo .explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #03234d;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.mega-promo .explore-btn:hover {
+    text-decoration: underline;
+}
+
+.mega-promo img {
+    width: 50%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 992px) {
+
+
+
+
+    .utility-login-btn {
+        background-color: #000080;
+        color: #ffffff;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .utility-bar {
+        padding: 8px 20px;
+        font-size: 11px;
+    }
+
+    .header-top {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+
+    .brand-logo {
+        height: 50px;
+    }
+
+    .main-title {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 8px;
+    }
+
+    /* Fix nav container */
+    .nav-container {
+        position: static;
+        transform: none;
+        min-width: auto;
+        border: none;
+        background: transparent;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    /* Hamburger */
+    .hamburger {
+        display: block;
+        font-size: 22px;
+        color: white;
+        z-index: 5001;
+    }
+
+    /* Sidebar Menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #011633;
+        flex-direction: column;
+        padding-top: 100px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        z-index: 5000;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 18px 25px;
+        font-size: 16px;
+    }
+
+    /* ✅ MEGA MENU FIX FOR MOBILE */
+    .mega-box {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        /* Hidden by default in mobile */
+        box-shadow: none;
+        padding: 15px 25px;
+        margin-top: 0;
+        flex-direction: column;
+        gap: 20px;
+        background: #0a1f3d;
+        transform: none;
+    }
+
+    li.mega-open .mega-box {
+        display: flex;
+        /* Show when parent li has .mega-open class */
+    }
+
+    .mega-col h3 {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .mega-col ul li a {
+        color: #ffffff;
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .mega-promo {
+        background: #0a1f3d;
+        border: none;
+        padding: 20px 0;
+        text-align: left;
+    }
+
+    .mega-promo h2 {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .mega-promo p {
+        color: #cbd5e1;
+    }
+}
+
+
+
+
+
+
+.nav-extra-logos {
+    display: flex;
+    gap: 17px;
+    margin-left: 50px;
+    /* ලින්ක් වල සිට ඇති දුර */
+    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-extra-logos img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .nav-extra-logos {
+        display: none;
+    }
+
+
+    .fa-solid fa-circle-chevron-right {
+        background: rgb(209, 16, 16);
+    }
+
+
+
+
+
+}
