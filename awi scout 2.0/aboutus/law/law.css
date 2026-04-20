@@ -1,0 +1,404 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0; 
+    font-family: 'Poppins', sans-serif; 
+    background-color: #ffffff; 
+}
+
+         
+    /* Fade-in Down Animation Definition */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* මඳක් ඉහළ සිට ආරම්භ වේ */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* නියමිත ස්ථානයට පැමිණේ */
+    }
+}
+
+/* Hero Section එකේ ඇති H1 සඳහා අදාළ වෙනස්කම් */
+.hero h1 { 
+    color: antiquewhite;
+    font-size: 4rem; 
+    margin: 0; 
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+    
+    /* ඔබ දැනටමත් ලියා ඇති කොටස */
+    animation: fadeInDown 1.5s ease forwards; 
+    
+    /* මෙහි forwards යන්න එක් කිරීමෙන් ඇනිමේෂනය අවසානයේ අකුරු නොපෙනී යාම වළක්වයි */
+}
+
+/* පවතින කේතයේ දෝෂ නිවැරදි කිරීම */
+.promise {
+    padding-top: 2rem;
+    display: flex;
+    flex: column; /* මෙහි දෝෂය නිවැරදි කරන ලදී */
+    align-items: center;    /* මැදට පෙළගැස්වීම සඳහා */
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.promise img {
+    width: 40%;
+    height: auto;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    top: 5rem; /* 10rem වැඩි බැවින් 5rem ලෙස අඩු කරන ලදී */
+    padding: 0 20px;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.content p {
+    line-height: 2.7; /* ජංගම දුරකථන සඳහා 1.8 වඩාත් සුදුසුයි */
+    color: #666;
+    margin: 0;
+}
+
+/* --- Mobile Responsive Section (ජංගම දුරකථන සඳහා) --- */
+@media (max-width: 768px) {
+    .promise {
+        flex-direction: column; /* Content එක එක පෙළට සැකසීමට */
+        padding-top: 1.5rem;
+    }
+
+    .promise img {
+        width: 85%; /* පින්තූරය තිරයට ගැලපෙන සේ විශාල කිරීමට */
+    }
+
+    .content {
+        position: static; /* Mobile වලදී අකුරු පින්තූරය මතට ඒම වැළැක්වීමට */
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .content p {
+        font-size:13px;
+        line-height: 2.2; /* කියවීමට පහසු වන සේ පරතරය අඩු කරන ලදී */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.hero-overlay {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* පින්තූරය මත අඳුරු පැහැයක් (Overlay) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.info-box {
+
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 15px;
+ 
+  border-right: 2px solid #ddd;
+}
+
+.promise-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.promise-item:not(:last-child) {
+  border-bottom: 1px dashed #eee; /* පේළි වෙන් කිරීමට සරල ඉරක් */
+}
+
+.main-line {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.sub-line {
+  font-size: 13px;
+  color: #666;
+
+  margin: 0;
+  padding-left: 10px;
+}
+
+.scout-text-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.scout-para {
+  margin-bottom: 30px;
+ padding: 0px 50px 50px 0px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Hover ඇනිමේෂනය සඳහා */
+}
+
+
+
+
+.scout-para h2 {
+
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.scout-para p {
+
+    font-size: 13px;
+  color: #444;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Mobile වලදී කියවීමට පහසු වීමට */
+@media (max-width: 600px) {
+  .scout-para h2 {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+.info{
+     padding-top: 10px;
+    display: flex;
+    flex: column; /* මෙහි දෝෂය නිවැරදි කරන ලදී */
+    align-items: center;    /* මැදට පෙළගැස්වීම සඳහා */
+    justify-content: center;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    .info {
+        flex-direction: column; /* මෙහිදී කරුණු එකකට යටින් එකක් (Column) ලෙස සැකසේ */
+        padding: 10px;
+    }
+
+    .info-box {
+     
+        max-width: 100%; /* සම්පූර්ණ පළල ලබා ගැනීමට */
+        margin: 10px 0;
+        border-right: none; /* Mobile වලදී දකුණුපස ඉර ඉවත් කිරීම වඩාත් ලස්සනයි */
+        border-bottom: 2px solid #ddd; /* ඒ වෙනුවට පහළින් ඉරක් දැමිය හැක */
+    }
+
+    .scout-para {
+        /* Mobile වලදී 50px padding එක වැඩි බැවින් එය 15px දක්වා අඩු කරන ලදී */
+        padding: 15px; 
+        margin-bottom: 20px;
+    }
+
+    .scout-para h2 {
+        font-size: 1.1rem;
+        text-align: center; /* Mobile වලදී මාතෘකාව මැදට කිරීම පැහැදිලියි */
+    }
+
+    .scout-para p {
+        font-size: 13px;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left; /* කුඩා තිර වලදී justify කිරීම කියවීමට අපහසු විය හැක */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* පවතින කේතයේ දෝෂ නිවැරදි කිරීම */
+.law {
+    padding-top: 3rem;
+    display: flex;
+    flex: column; /* මෙහි දෝෂය නිවැරදි කරන ලදී */
+    align-items: center;    /* මැදට පෙළගැස්වීම සඳහා */
+    justify-content: center;
+}
+
+.law img {
+    width: 40%;
+    height: auto;
+}
+
+.law .content {
+    text-align: left;
+    position: relative;
+    top: 5rem; /* 10rem වැඩි බැවින් 5rem ලෙස අඩු කරන ලදී */
+    padding: 0 20px;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.content p {
+    line-height: 2.7; /* ජංගම දුරකථන සඳහා 1.8 වඩාත් සුදුසුයි */
+    color: #666;
+    margin: 0;
+}
+
+/* --- Mobile Responsive Section (ජංගම දුරකථන සඳහා) --- */
+@media (max-width: 768px) {
+    .law {
+        flex-direction: column; /* Content එක එක පෙළට සැකසීමට */
+        padding-top: 1.5rem;
+    }
+
+    .law img {
+        width: 85%; /* පින්තූරය තිරයට ගැලපෙන සේ විශාල කිරීමට */
+    }
+
+    .content {
+        position: static; /* Mobile වලදී අකුරු පින්තූරය මතට ඒම වැළැක්වීමට */
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .content p {
+        font-size:13px;
+        line-height: 2.2; /* කියවීමට පහසු වන සේ පරතරය අඩු කරන ලදී */
+    }
+}
+
+.law img{padding: 50px;
+    height: 40rem;
+    width: auto;
+}
+@media (max-width: 768px) {
+    .law img{padding: 30px;
+    height: 20rem;
+    width: auto;
+}
+}
+
+
+
+
+.scout-laws-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.laws-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* එක පේළියක කාඩ් 4 ක් */
+  gap: 20px; /* කාඩ් අතර පරතරය */
+}
+
+.law-card {
+
+  background: #ffffff;
+  border-left: 2px solid #ddd;
+  padding: 20px;
+
+  text-align: center;
+}
+
+.law-card h3 {
+  color:#2c3e50; /* බාලදක්ෂ නිල් පැහැය */
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.law-card p {
+   
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Mobile Responsive (ජංගම දුරකථන සඳහා) --- */
+@media (max-width: 1024px) {
+  .laws-grid {
+    grid-template-columns: repeat(2, 1fr); /* ටැබ්ලට් වලදී පේළියට කාඩ් 2 ක් */
+  }
+}
+
+@media (max-width: 600px) {
+  .laws-grid {
+    grid-template-columns: 1fr; /* දුරකථන වලදී පේළියට එක බැගින් */
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

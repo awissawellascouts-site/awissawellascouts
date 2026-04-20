@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Footer without Slide-up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #015392;
+            --accent-color: #ffffff;
+            --text-gray: #bdc3c7;
+            --hover-gold: #f1c40f;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        footer {
+            background-color: var(--bg-color);
+            color: white;
+            padding: 60px 0 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* පසුබිම් රොටේෂන් ඇනිමේෂන් එක (Advanced Look) */
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotateBg 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotateBg {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        /* Slide-up ඉවත් කළ නිසා opacity: 1 සහ transform: none ලෙස සැකසුවා */
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            opacity: 1;
+            transform: none;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: var(--hover-gold);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .footer-col:hover h3::after {
+            width: 70px;
+        }
+
+        /* Social Media Icons Advanced Animation */
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--hover-gold);
+            color: var(--bg-color);
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 0 20px var(--hover-gold);
+        }
+
+        .links-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .links-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+            transition: transform 0.3s;
+        }
+
+        .links-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .links-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .links-list a i {
+            margin-right: 10px;
+            font-size: 12px;
+            color: var(--hover-gold);
+        }
+
+        .opening-hours div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--text-gray);
+        }
+
+        .subscribe-box {
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            max-width: 400px;
+        }
+
+        .subscribe-box input {
+            border: none;
+            padding: 12px 20px;
+            outline: none;
+            flex: 1;
+        }
+
+        .subscribe-box button {
+            background: #003366;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .subscribe-box button:hover {
+            background: var(--hover-gold);
+            color: #73aeea;
+        }
+
+        .copyright {
+            padding: 20px;
+            background: #012952;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-img {
+            padding-top: 50px;
+            width: 100%;
+            display: block;
+            position: relative;
+            top: 2px;
+        }
+
+        .footer-logo {
+            height: 20vh;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-logo {
+                height: 10vh;
+            }
+
+            .footer-col {
+                text-align: center;
+                font-size: 12px;
+            }
+
+            .copyright {
+                padding: 20px;
+                background: #012952;
+                text-align: center;
+                margin-top: 40px;
+                font-size: 9px;
+                color: var(--text-gray);
+                position: relative;
+                z-index: 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <img class="footer-img" src="../image-icon/scoutfooter.png" alt="">
+
+    <footer>
+        <div class="container">
+            <div class="footer-col logo-area">
+                <img class="footer-logo" src="../image-1/awissawella logo org 001.png"
+                    style="max-width: 180px; margin-bottom: 15px;" alt="Awissawella Scouts Logo">
+                <p style="color: var(--text-gray); line-height: 1.6; font-size: 14px; margin-bottom: 20px;">
+                    Awissawella Scouts is a branch of the Sri Lanka Scout Association, dedicated to shaping the youth
+                    into responsible, disciplined, and skilled future leaders.
+                </p>
+                <p style="color: white; margin-bottom: 10px;"><i class="fas fa-map-marker-alt"
+                        style="color: var(--hover-gold); width: 20px;"></i> Scout Headquarters, Awissawella</p>
+                <p style="color: white; margin-bottom: 10px;"><i class="fas fa-phone"
+                        style="color: var(--hover-gold); width: 20px;"></i> +94 36 222 1234</p>
+                <p style="color: white; margin-bottom: 10px;"><i class="fas fa-envelope"
+                        style="color: var(--hover-gold); width: 20px;"></i> admin@awissawellascouts.lk</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Useful Links</h3>
+                <ul class="links-list">
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> HOME</a></li>
+                    <li><a href="../pages/mission&vission.html"><i class="fas fa-chevron-right"></i> ABOUT US</a></li>
+                    <li><a href="../pages/e-lib.html"><i class="fas fa-chevron-right"></i> E-LIBRARY</a></li>
+                    <li><a href="../pages/admins.html"><i class="fas fa-chevron-right"></i> ADMINS</a></li>
+                    <li><a href="../pages/contact.html"><i class="fas fa-chevron-right"></i> CONTACT US</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Latest News</h3>
+                <ul class="links-list" id="footer-news-list">
+                    <!-- Dynamic headlines will be injected here -->
+                    <li style="border:none; color:var(--text-gray); font-size:13px;">Loading news...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+            <div
+                style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Email Address">
+                    <button a href="../pages/contact.html">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            DESIGNED BY AWISSAWELLA SCOUTS © 2026 ALL RIGHTS RESERVED
+            <br>A WEBSITE DEVELOPED & MAINTAINED BY HANWELLA RAJASINGHE CENTRAL COLLEGE SCOUT TROOP 8TH OF AWISSAWELLA
+        </div>
+    </footer>
+
+</body>
+
+</html>
