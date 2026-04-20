@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & OG Tags -->
+    <meta name="description"
+        content="Awissawella Scouts is an active Scout branch committed to developing disciplined youth through outdoor activities and leadership training.">
+    <meta property="og:title" content="Awissawella Scout Association">
+    <meta property="og:description"
+        content="Awissawella Scouts is an active Scout branch committed to developing disciplined youth through outdoor activities and leadership training.">
+    <meta property="og:image" content="../image-icon/org awi logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <title>Meet the Team - Awissawella Scout</title>
+    <link rel="stylesheet" href="../navbar/nav.css">
+    <link rel="stylesheet" href="admins/admins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+    <div id="navbar-placeholder" data-base-path=".."></div>
+
+    <script src="../navbar/nav.js"></script>
+
+    <!-- MAIN MEET THE TEAM SECTION -->
+    <main class="team-section">
+        <h2>Meet the <strong>Team.</strong></h2>
+
+        <div class="team-filter" id="role-filters">
+            <button class="filter-btn active" data-filter="All">All</button>
+            <button class="filter-btn" data-filter="District Commissioner">District Commissioner</button>
+            <button class="filter-btn" data-filter="Assistant District Commissioner">Assistant DC</button>
+            <button class="filter-btn" data-filter="Scout Leader">Leaders</button>
+        </div>
+
+        <div class="team-grid" id="team-grid-container">
+            <p style="grid-column: 1 / -1; padding: 40px; color: #888;"><i class="fas fa-spinner fa-spin"></i> Loading
+                team members...</p>
+        </div>
+    </main>
+
+    <!-- Modal for Extra Details -->
+    <div id="teamInfoModal" class="team-modal">
+        <div class="team-modal-content">
+            <span class="team-modal-close" onclick="closeTeamModal()">&times;</span>
+            <img id="tm-pic" class="tm-img" src="" alt="Profile">
+            <h3 id="tm-name">Name</h3>
+            <div class="role" id="tm-role">Role</div>
+
+            <div class="info-row">
+                <i class="fas fa-school"></i>
+                <div>
+                    <span>Primary School / Unit</span>
+                    <p id="tm-school">-</p>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <span>Contact Number</span>
+                    <p id="tm-phone">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-1"></div>
+    <script src="../footer/footer.js"></script>
+
+    <!-- Firebase Compat SDK (CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="../firebase-config.js"></script>
+    <script src="admins/admins.js"></script>
+
+</body>
+
+</html>

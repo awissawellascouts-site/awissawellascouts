@@ -1,0 +1,171 @@
+      /* CSS කොටස - පෙනුම සකස් කිරීම */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+   
+     
+.contact{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+    p{text-align: center;
+        padding-bottom: 30px;
+
+}
+    /* ප්‍රධාන කොටස */
+    .main-container {
+        max-width: 1100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-card {
+        display: flex;
+        background: #fff;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        min-height: 500px;
+    }
+
+    /* වම් පස Form එක */
+    .form-side {
+        flex: 1.2;
+        padding: 50px;
+        background-color: #f2f4f7;
+    }
+
+    .form-side h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .input-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        font-weight: 900;
+        color: #555;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    .input-group input, .input-group textarea {
+        padding: 12px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background: #fff;
+        outline: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+        border-color: #4466cc;
+    }
+
+    .full-width {
+        margin-bottom: 20px;
+    }
+
+    .send-btn {
+        background-color: #3353b3;
+        color: white;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* දකුණු පස සිතියම */
+    .map-side {
+        flex: 1;
+        background-color: #ddd;
+    }
+
+    .map-side iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* පහළ තොරතුරු පේළිය */
+    .info-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        text-align: center;
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        background-color: #3353b3;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .info-box span {
+        color: #3353b3;
+    }
+
+    /* Responsive - දුරකථන සඳහා */
+    @media (max-width: 768px) {
+        .contact-card {
+            flex-direction: column;
+        }
+        .input-row {
+            flex-direction: column;
+        }
+        .map-side {
+            height: 300px;
+        }
+    }
